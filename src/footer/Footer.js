@@ -7,7 +7,7 @@ const Footer = () => {
     const {card1,card2,card3}=data;
     
     return (
-        <footer className="text-white w-full border-8 pt-20 flex justify-center flex-wrap" style={{backgroundImage:`url(${backImg})`}}>
+        <footer className="text-white w-full pt-20 flex justify-center flex-wrap" style={{backgroundImage:`url(${backImg})`}}>
             <div className="w-4/5 flex  ">
                 <div className=" w-96">
                     <h3 className="text-4xl mb-10">{card1.title}</h3>
@@ -16,8 +16,8 @@ const Footer = () => {
                 
                 <div className="h-4/5 w-96 mx-8">
                     <h5 className="text-xl mb-5">{card2.title}</h5>
-                    <ul className="w-full">{card2.especialiadad.map(item=>{
-                        return <li className="border-b text-lg py-1">
+                    <ul className="w-full">{card2.especialiadad.map((item,i)=>{
+                        return <li className="border-b text-lg py-1" key={i}>
                                 <a href="//#">&gt;{item}</a>
                             </li> 
                     })}</ul>
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
             <ul className="w-full flex flex-wrap justify-between px-16">
                 {dataFoot.map((item,i)=>{
-                        return <li className="w-64 mx-14 my-10">
+                        return <li className="w-64 mx-14 my-10" key={i} >
                             <h1 className="mb-5 text-4xl">Titulo {i+1}</h1>
                             <p>Av. Paseo de la republica 291. Piso 11.
                                 Oficinas 1101, Cercado de lima.

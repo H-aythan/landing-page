@@ -16,7 +16,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <ul className={`md:flex items-center w-4/5 md:w-max ${show&&"hidden"}`}>
+            <ul className={`md:flex items-center w-4/5 md:w-max ${!show&&"hidden"}`}>
                {option.map((item,i)=>{
                    return <li  key={i} className="py-2 border-b-2 md:border-0" onClick={()=>setShow(!show)}>
                         <NavLink activeClassName="md:border-b-2 md:border-blue-500 md:text-blue-500" className={`px-5 py-2 md:py-5  cursor-pointer `} to={`/${item}`}>{item}</NavLink>

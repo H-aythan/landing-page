@@ -25,18 +25,21 @@ const Carrousel = () => {
     
     return (
         <div className="w-screen items-center border-2">
-            <div className="flex items-center ">
+            <div className="relative flex items-center justify-center ">
                 <img alt="" src={imgSelected}/>
-                <button className="absolute left-5 text-3xl bg-gray-200 rounded-full w-10 h-10 bg-opacity-75 text-center"
+                <button className="hidden md:block absolute left-5 text-3xl bg-gray-200 rounded-full w-10 h-10 bg-opacity-75 text-center"
                     onClick={()=>newImg()}
                 >
                     {`<`}
                 </button>
-                <button className="absolute right-5 text-3xl bg-gray-200 rounded-full w-10 h-10 bg-opacity-75 text-center"
+                <button className="hidden md:block absolute right-5 text-3xl bg-gray-200 rounded-full w-10 h-10 bg-opacity-75 text-center"
                     onClick={()=>newImg(true)}
                 >
                     {`>`}
                 </button>
+                <div className="absolute bottom-8 flex gap-x-1">{imgs.map((item,i)=>{
+                    return <div className="w-5 h-5 bg-gray-200 rounded-full" onClick={()=>setImgIndex(i)}></div>   
+                })}</div>
             </div>
         </div>
     )

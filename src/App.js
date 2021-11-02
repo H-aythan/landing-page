@@ -7,11 +7,11 @@ import firmaPage from './pages/firmaPage/firmaPage';
 function App() {
   return (
     <Router>
-      <div className="flex flex-wrap justify-center">
+      <div className="">
         <Header/>
-          <Route exact path="/" component={HomePage}/>
-          <Route exact path="/firmapage" component={firmaPage}/>
-        <Foot/>
+          <Route exact path="/inicio" component={HomePage}/>
+          <Route exact path="/Nuestra firmas" component={firmaPage}/>
+        <Foot/>  
       </div>
     </Router>
   );

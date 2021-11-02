@@ -7,7 +7,7 @@ const Footer = () => {
     const {card1,card2,card3}=data;
     
     return (
-        <footer className="text-white w-full pt-20 flex justify-center flex-wrap" style={{backgroundImage:`url(${backImg})`}}>
+        <footer className="mt-16 text-white w-full pt-20 flex justify-center flex-wrap" style={{backgroundImage:`url(${backImg})`}}>
             <div className="w-4/5 flex  ">
                 <div className=" w-96">
                     <h3 className="text-4xl mb-10">{card1.title}</h3>

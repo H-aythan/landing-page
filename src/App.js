@@ -5,6 +5,7 @@ import HomePage from './pages/homePage/HomePage';
 import firmaPage from './pages/firmaPage/firmaPage';
 import {useState } from 'react';
 import EspecialidadPage from './pages/EspecialidadesPage/EspecialidadPage';
+import ClientesPage from './pages/ClientestPage/ClientesPage';
 
 function App() {
   
@@ -15,7 +16,8 @@ function App() {
       <Header setNamePage={setNamePage}/>
       <Route exact path="/" component={HomePage}/>
       <Route exact path="/Nuestra Firma" component={firmaPage}/>
-      <Route path={`/Especialidades`} component={()=><EspecialidadPage namePage={namePage} setNamePage={setNamePage}/>}/>
+      <Route path="/Especialidades" component={()=><EspecialidadPage namePage={namePage} setNamePage={setNamePage}/>}/>
+      <Route path="/Clientes" component={()=><ClientesPage/>}/>
       <Foot/>  
      
     </Router>

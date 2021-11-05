@@ -38,7 +38,7 @@ const Carrousel = () => {
                     {`>`}
                 </button>
                 <div className="absolute bottom-8 flex gap-x-1">{imgs.map((item,i)=>{
-                    return <div className="w-5 h-5 bg-gray-200 rounded-full" onClick={()=>setImgIndex(i)}></div>   
+                    return <div className="w-5 h-5 bg-gray-600 rounded-full cursor-pointer border-4" key={i} onClick={()=>setImgIndex(i)}></div>   
                 })}</div>
             </div>
         </div>

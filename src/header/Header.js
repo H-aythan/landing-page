@@ -26,6 +26,7 @@ const Header = ({setNamePage}) => {
                     />
             })}
             </ul>
+            
         </header>
     )
 }

@@ -1,23 +1,32 @@
 import React from 'react'
 import img from '../../../img/antezana-serv-2.jpg'
 import CardsSection1 from './componentsSection1.js/CardsSection1'
-export const Section1 = () => {
+const especialiadad=["Derecho Penal",
+        "Derecho Laboral",
+        "Derecho Corporativo",
+        "Derecho Civil",
+        "Derecho Inmobiliario",
+        "Derecho de Familia",
+        "Procesos Administrativos",
+        "Cobranza Judicial y Extrajudicial"
+]
+
+export const Section1 = ({setNamePage}) => {
+    
     return (
         <div className="w-full mt-10">
             <h1 className="text-center text-4xl mb-10">Áreas de Especialización </h1>
-            <div className="gap-x-8 gap-y-8 px-14 items-center flex-col flex justify-between md:flex-row mb-10 ">
-                <CardsSection1 img={img}/>
-                <CardsSection1 img={img} invertir={true}/>
-                <CardsSection1 img={img} invertir={true}/>
-                <CardsSection1 img={img}/>
+            <div className="gap-x-8 gap-y-8 px-14 items-center flex-col flex justify-between md:flex-row mb-10 flex-wrap">
+               {especialiadad.map((item,i)=>{
+                   return<CardsSection1 img={img} invertir={(i===2||i===1||i===5||i===6)&&true} 
+                    title={item}
+                    setNamePage={setNamePage}
+                    />
+               })}
+               
             </div>
-            <div className="gap-x-8 px-14 flex-col items-center flex justify-between md:flex-row ">
-                <CardsSection1 img={img}/>
-                <CardsSection1 img={img} invertir={true}/>
-                <CardsSection1 img={img} invertir={true}/>
-                <CardsSection1 img={img}/>
-            </div>
+            
         </div>
     )
-}
+}//1256
 export default Section1;

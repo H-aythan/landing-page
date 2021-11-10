@@ -1,11 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import img from '../../../img/Estudio_Juridico_Antezana_botton.jpg'
 const section2 = () => {
     return (
         <div className="w-full text-white flex flex-col items-center py-20" style={{backgroundImage:`url(${img})`}}>
             <h1 className="text-5xl mb-10 border-b min-w-min pb-5 ">Nuestro Estudio</h1>
             <p className="border rounded w-4/5 text-2xl text-center px-8 py-4">{texto}</p>
-            <a className="border rounded px-4 py-2 mt-16 cursor-pointer" href="/">Leer mas +</a>
+            <NavLink className="border rounded px-4 py-2 mt-16 cursor-pointer" to="/Nuestra Firma">Leer mas +</NavLink>
         </div>
     )
 }

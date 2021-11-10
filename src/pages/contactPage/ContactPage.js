@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Formulario from './componentsContactPage/Formulario'
 import NuestrasOficinas from './componentsContactPage/NuestrasOficinas'
 const lista=[1,1,1]
-const ContactPage = () => {
+const ContactPage = ({init}) => {
+    
+    useEffect(()=>{
+        init.current.scrollIntoView('smooth','start')
+      },[init])
     return (
         <div className="w-full flex-col xl:flex-row flex justify-center gap-x-20 items-center flex-wrap">
             <div className="xl:w-1/2 w-4/5">

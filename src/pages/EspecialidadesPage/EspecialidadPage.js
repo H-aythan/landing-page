@@ -1,27 +1,31 @@
-import React from 'react'
-import { NavLink} from 'react-router-dom'
+import React,{useEffect} from 'react'
+
 import img from '../../img/antezana-serv-2.jpg'
-const especialiadad=["Derecho Civil",
-        "Derecho Penal",
-        "Procesos Administrativo",
+const especialiadad=["Derecho Penal",
+        "Derecho Laboral",
         "Derecho Corporativo",
+        "Derecho Civil",
+        "Derecho Inmobiliario",
         "Derecho de Familia",
-        "Cobranza Judicial y Extrajudicial",
-        "Derecho Inmobiliario"
-    ]
-const EspecialidadPage = ({namePage,setNamePage}) => {
+        "Procesos Administrativos",
+        "Cobranza Judicial y Extrajudicial"
+]
+const EspecialidadPage = ({namePage,setNamePage,init}) => {
     
+    useEffect(()=>{
+        init.current.scrollIntoView('smooth','start')
+      },[init])
     return (
-        <div className=" flex px-10 xl:px-32 gap-x-8 flex-col md:flex-row ">
+        <div className=" flex px-10 xl:px-32 gap-x-8 flex-col md:flex-row " >
             <div className="xl:w-1/5 h-4/5 ">
                 <h1 className="text-2xl mb-5">Areas de Especailidades</h1>
                 <ul className="flex flex-col">
                     {especialiadad.map(item=>{
-                        return <NavLink key={item} to={`/Especialidades/`+namePage} className={`border py-2 pl-4 hover:bg-blue-700 hover:text-white ${namePage===item&&"bg-blue-700 text-white"}`}
+                        return <li key={item} className={`border cursor-pointer py-2 pl-4 hover:bg-blue-700 hover:text-white ${namePage===item&&"bg-blue-700 text-white"}`}
                             onClick={()=>setNamePage(item)}
                         >
                             {item}
-                            </NavLink>
+                            </li>
                     })}
                 
                 </ul>

@@ -1,9 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import backImg from '../img/Estudio_Juridico_Antezana_botton.jpg'
 import data from './Data';
 const dataFoot=[1,1,1,1,1,1,1,1,1]
 
-const Footer = () => {
+const Footer = ({setNamePage}) => {
     const {card1,card2,card3}=data;
     
     return (
@@ -18,7 +19,7 @@ const Footer = () => {
                     <h5 className="text-xl mb-5">{card2.title}</h5>
                     <ul className="w-full">{card2.especialiadad.map((item,i)=>{
                         return <li className="border-b text-lg py-1" key={i}>
-                                <a href="//#">&gt;{item}</a>
+                                <NavLink to="/Especialidades" onClick={()=>setNamePage(item)}>&gt;{item}</NavLink>
                             </li> 
                     })}</ul>
                 </div> 

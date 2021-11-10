@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 const clientes=[1,1,1,1,1]
-const ClientesPage = () => {
+const ClientesPage = ({init}) => {
+    
+    useEffect(()=>{
+        init.current.scrollIntoView('smooth','start')
+      },[init])
     return (
         <div className="flex flex-col items-center flex-wrap ">
             <h1 className="text-5xl text-blue-500 text-center mb-20 mt-10">Clientes</h1>

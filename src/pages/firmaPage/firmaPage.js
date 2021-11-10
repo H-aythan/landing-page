@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import img from './../../img/Estudio_Juridico_Antezana_slider_02.jpg'
-const firmaPage = () => {
-    return (
+const FirmaPage = ({init}) => {
+  useEffect(()=>{
+    init.current.scrollIntoView('smooth','start')
+},[])
+  
+  return (
         <div className="md:px-28 flex flex-wrap justify-center ">
           <h1 className="text-center text-5xl mb-20 text-blue-300">Antezana</h1>  
           <p className="mb-20 px-4">{parrafo1}</p>
@@ -29,4 +33,4 @@ const firmaPage = () => {
 
 const parrafo1="Nuestro estudio de abogados ofrece a los clientes asesoría legal especializada en forma personalizada, a través de nuestro staff de abogados altamente capacitados y con experiencia en las diversas áreas del derecho. Brindamos asesoría jurídica de la más alta calidad, personalizando la relación con nuestros clientes, generándoles seguridad y comodidad, logrando formar, de esta manera, relaciones de estrecha confianza y de largo plazo.";
 const parrafo2="Los trabajadores de EJA debemos compartir y hacer nuestros una serie de valores, como principios indispensables que nos hacen formar parte del equipo. Reconocernos en ellos, propagarlos y defenderlos nos hace a cada uno “Mejor Profesional”";
-export default firmaPage
+export default FirmaPage

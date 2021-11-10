@@ -12,7 +12,7 @@ const especialiadad=["Derecho Civil",
 const EspecialidadPage = ({namePage,setNamePage}) => {
     
     return (
-        <div className=" flex px-10 xl:px-32 gap-x-8 flex-col xl:flex-row ">
+        <div className=" flex px-10 xl:px-32 gap-x-8 flex-col md:flex-row ">
             <div className="xl:w-1/5 h-4/5 ">
                 <h1 className="text-2xl mb-5">Areas de Especailidades</h1>
                 <ul className="flex flex-col">
@@ -27,10 +27,10 @@ const EspecialidadPage = ({namePage,setNamePage}) => {
                 </ul>
             </div>
                     
-            <div className="xl:w-4/5 pb-5 ">
+            <div className="md:w-4/5 pb-5 ">
                 <img src={img} alt="" width="100%"/>
                 <div className="text-justify mt-5">
-                    <h1 className="text-4xl text-blue-700 mb-2">{namePage}</h1>
+                    <h1 className="text-left text-4xl text-blue-700 mb-2">{namePage}</h1>
                     <p>Los abogados penalistas del área representan a sociedades, asociaciones, directores, gerentes y otros profesionales que están siendo investigados o procesados. El servicio que brindamos comprende una asesoría integral preventiva y de definición de estrategias en caso de defensas penales.</p>
                 </div>
             </div>

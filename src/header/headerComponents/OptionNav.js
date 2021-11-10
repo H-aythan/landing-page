@@ -30,7 +30,7 @@ const OptionNav = ({name,setNamePage,setShowMenu,setSelected,selected}) => {
             >
             <NavLink exact   
                 className={`px-5 py-2 md:py-5 flex items-center cursor-pointer
-                    ${selected===name&&"md:border-b-2 md:border-blue-500 md:text-blue-500"}
+                    ${selected===name&&"md:border-b-2 md:border-sky-600 md:text-sky-700"}
                 `} 
                 to={`/${name}`}
                 onClick={(e)=>acciones2(e,name)}

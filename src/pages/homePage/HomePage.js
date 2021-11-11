@@ -6,7 +6,7 @@ import Section3 from './components/section3';
 const HomePage = ({setNamePage,init}) => {
     
     useEffect(()=>{
-        init.current.scrollIntoView('smooth','start')
+        init.current.scrollIntoView({block: "end", behavior: "smooth"})
       },[init])
     return (
         <div className="w-full overflow-hidden">

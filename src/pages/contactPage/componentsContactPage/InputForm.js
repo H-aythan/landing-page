@@ -9,7 +9,7 @@ const InputForm = ({name,error}) => {
                 {name!=="asunto"&&" (requerido)"}
             </label><br/>
             <Field 
-                className={`px-1 rounded w-full focus:outline-none focus:ring-0 
+                className={`px-1 rounded w-full focus:outline-none focus:ring-0 text-black
                     ${!error&&"focus:border-blue-200"} border-2 placeHolder-red-500
                     placeholder-red-500 ${error&&'border-red-500'}
                 `}
@@ -17,7 +17,7 @@ const InputForm = ({name,error}) => {
                 id={name} 
                 name={name}
             />
-            <div className="text-red-500 h-6">
+            <div className="text-red-500 ">
                 {error}
             </div>
         </div>

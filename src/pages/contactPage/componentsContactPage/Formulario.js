@@ -46,8 +46,8 @@ const Formulario = () => {
         >
             {({errors,touched})=>(
                 
-            <Form className="flex flex-col gap-y-5">
-                   {console.log(errors)}
+            <Form className="flex flex-col gap-y-3">
+                   
                 <InputForm name="nombre" 
                     error={touched.nombre&&errors.nombre}
                 />
@@ -63,14 +63,15 @@ const Formulario = () => {
                 <div className="">
                     <p>Mensaje</p>
                     <Field 
-                        className="px-1 rounded w-full focus:outline-none focus:ring-0 focus:border-blue-200 border-2"
+                        className={`px-1 text-black rounded w-full focus:outline-none focus:ring-0 focus:border-blue-200 border-2`}
+                        
                         name="mensaje" 
                         rows="10" 
                         cols="30"
                         as="textarea"
                         ></Field>
                 </div>
-                <button type="submit" className="py-1 shadow-inner hover:bg-sky-300 hover:text-white border w-20 bg-blueGray-100 rounded ">
+                <button type="submit" className="py-1 text-black shadow-inner hover:bg-sky-300 hover:text-white border w-20 bg-blueGray-100 rounded ">
                     Enviar
                 </button>
                 {envio&&<div className="text-green-500 border-2 w-40 text-md pl-2 border-green-300 rounded">Formulario Enviado</div>}

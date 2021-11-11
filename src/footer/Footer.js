@@ -8,7 +8,7 @@ const Footer = ({setNamePage}) => {
     const {card1,card2,card3}=data;
     
     return (
-        <footer className="mt-16 text-white md:py-20 flex justify-center flex-wrap" style={{backgroundImage:`url(${backImg})`}}>
+        <footer className="mt-16 text-white md:py-20 flex justify-center flex-wrap overflow-x-hidden" style={{backgroundImage:`url(${backImg})`}}>
             <div className="xl:w-4/5 flex flex-wrap md:flex-nowrap flex-col lg:flex-row items-center mb-5 md:gap-x-14">
                  <div className="lg:w-1/3 leading-tight p-5 ">
                     <h3 className="text-4xl mb-10">{card1.title}</h3>

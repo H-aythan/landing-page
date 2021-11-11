@@ -9,7 +9,7 @@ const Header = ({setNamePage}) => {
     
     
     return (
-        <header className="mb-10 w-screen sticky top-0 bg-white md:h-54 flex flex-wrap justify-around items-center" style={{zIndex:"10000"}}>
+        <header className="mb-10 w-full sticky top-0 bg-white md:h-54 flex flex-wrap justify-around items-center" style={{zIndex:"10000"}}>
             <div className="flex items-center justify-between w-4/5 md:max-w-max " >
                 <NavLink to="/" ><img src={logo}  alt="logo.jpg"/></NavLink>
                 <div className="md:hidden border-2 rounded ml-8 py-3 px-3 w-12 h-12 flex justify-center flex-wrap items-center"  onClick={()=>setShow(!show) }>

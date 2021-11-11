@@ -3,7 +3,7 @@ import img from './../../img/Estudio_Juridico_Antezana_slider_02.jpg'
 const FirmaPage = ({init}) => {
   useEffect(()=>{
     init.current.scrollIntoView('smooth','start')
-},[])
+},[init])
   
   return (
         <div className="md:px-28 flex flex-wrap justify-center ">

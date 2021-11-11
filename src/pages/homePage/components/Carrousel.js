@@ -24,7 +24,7 @@ const Carrousel = () => {
     }
     
     return (
-        <div className="w-screen items-center border-2">
+        <div className="items-center border-2">
             <div className="relative flex items-center justify-center ">
                 <img alt="" src={imgSelected}/>
                 <button className="hidden md:block absolute left-5 text-3xl bg-gray-200 rounded-full w-10 h-10 bg-opacity-75 text-center"

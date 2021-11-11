@@ -1,10 +1,7 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import NuestrasOficinas from '../contactPage/componentsContactPage/NuestrasOficinas'
 
-const OficinasPage = ({init}) => {
-    useEffect(()=>{
-        init.current.scrollIntoView('smooth','start')
-      },[init])
+const OficinasPage = () => {
     
       return (
         <div className="flex justify-center">

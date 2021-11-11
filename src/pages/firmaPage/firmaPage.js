@@ -1,20 +1,18 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import img from './../../img/Estudio_Juridico_Antezana_slider_02.jpg'
-const FirmaPage = ({init}) => {
-  useEffect(()=>{
-    init.current.scrollIntoView('smooth','start')
-},[init])
+const FirmaPage = () => {
+
   
   return (
         <div className="md:px-28 flex flex-wrap justify-center ">
-          <h1 className="text-center text-5xl mb-20 text-blue-300">Antezana</h1>  
+          <h1 className="text-center text-5xl mb-20 textColor">Antezana</h1>  
           <p className="mb-20 px-4">{parrafo1}</p>
           <div className="mx-8 md:mx-0">
             <img alt=""  src={img}/>
           </div>
           <div className="flex flex-col xl:flex-row ">
               <div className="border-2 mx-8 md:mx-0 rounded md:h-auto xl:w-2/3 flex justify-center flex-wrap py-8">
-                  <h3 className="text-3xl w-full text-center mb-3">Titulo</h3>
+                  <h3 className="text-3xl w-full text-center mb-3 textColor">Titulo</h3>
                   
                   <ul className="list-disc px-8">{[1,1,1].map((item,i)=>{
                       return <li key={i}>Proporcionar un servicio de calidad que satisfaga las expectativas de nuestros clientes.</li>
@@ -22,7 +20,7 @@ const FirmaPage = ({init}) => {
                     })}</ul>
               </div>
               <div className="xl:w-1/3 border-2 pt-8 mx-8 md:mx-0">
-                <h3 className="text-center text-3xl">Titulo</h3>
+                <h3 className="text-center text-3xl textColor">Titulo</h3>
                 <p className="p-5">{parrafo2}</p>
               </div>
               

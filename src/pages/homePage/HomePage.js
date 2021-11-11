@@ -1,13 +1,11 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import Carrousel from './components/Carrousel';
 import Section1 from './components/Section1';
 import Section2 from './components/section2';
 import Section3 from './components/section3';
-const HomePage = ({setNamePage,init}) => {
+const HomePage = ({setNamePage}) => {
     
-    useEffect(()=>{
-        init.current.scrollIntoView({block: "end", behavior: "smooth"})
-      },[init])
+    
     return (
         <div className="w-full overflow-hidden">
             <Carrousel/>

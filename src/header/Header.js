@@ -1,12 +1,16 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import {NavLink,} from 'react-router-dom';
 import logo from '../img/Estudio_Juridico_Antezana_logo_2.png'
 import OptionNav from './headerComponents/OptionNav';
-const optionNav=["","Nuestra Firma","Especialidades","Clientes","Contactenos","Oficinas"];
+const optionNav=["Inicio","Nuestra Firma","Especialidades","Clientes","Contactenos","Oficinas"];
 
-const Header = ({setNamePage}) => {
+const Header = ({setNamePage,init,namePage}) => {
     const [show,setShow]=useState(false);
+    const [pageSelected,setPageSelected]=useState("")
     
+    useEffect(()=>{
+        init.current.scrollIntoView({block: "end", behavior: "smooth"})
+    },[pageSelected,init,namePage])
     
     return (
         <header className="mb-10 w-full sticky top-0 bg-white md:h-54 flex flex-wrap justify-around items-center" style={{zIndex:"10000"}}>
@@ -22,7 +26,7 @@ const Header = ({setNamePage}) => {
             <ul className={`md:flex items-center w-4/5 md:w-max ${!show&&"hidden"}`} >
              {optionNav.map(item=>{ 
                     return<OptionNav key={item} name={item} setNamePage={setNamePage} 
-                    setShowMenu={setShow} 
+                    setShowMenu={setShow} setPageSelected={setPageSelected}
                     />
             })}
             </ul>

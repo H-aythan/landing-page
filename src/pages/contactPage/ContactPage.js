@@ -1,16 +1,14 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import Formulario from './componentsContactPage/Formulario'
 import NuestrasOficinas from './componentsContactPage/NuestrasOficinas'
 const lista=[1,1,1]
-const ContactPage = ({init}) => {
+const ContactPage = () => {
     
-    useEffect(()=>{
-        init.current.scrollIntoView('smooth','start')
-      },[init])
+    
     return (
         <div className="w-full flex-col xl:flex-row flex justify-center gap-x-20 items-center flex-wrap">
             <div className="xl:w-1/2 w-4/5">
-                <h1 className="text-3xl text-blue-700 pb-4 mb-8 border-b">Contáctanos</h1>
+                <h1 className="text-3xl textColor pb-4 mb-8 border-b">Contáctanos</h1>
                 <p>Si usted desea comunicarse con nosotros puede acercarse, escribirnos o llamarnos</p>
                 <ul className="flex flex-wrap mt-5">
                     {lista.map((item,i)=>{
@@ -32,7 +30,7 @@ const ContactPage = ({init}) => {
                 </div>
             </div>
             <aside className="xl:w-1/4 w-4/5">
-                <h1 className="text-3xl text-blue-700 pb-4 mb-8 border-b">Formulario de Contacto</h1>
+                <h1 className="text-3xl textColor pb-4 mb-8 border-b">Formulario de Contacto</h1>
                 <p className="mb-5">Para atender su consulta, por favor complete el siguiente formulario:</p>
                 <Formulario/>
             </aside>

@@ -8,7 +8,9 @@ const section3 = () => {
                 {[0,0,0].map((item,i)=>{
                     return <div className="w-60 md:w-80 rounded border-2 shadow-2xl" key={i}>
                         <img alt="" src={img}/>
-                        <p className="text-center text-2xl py-2 text-gray-400">Titulo</p>
+                        <p className="text-center text-2xl py-2 text-gray-400 backgroundColorH 
+                            border-b-2 border-t-2"
+                        >Titulo</p>
                     </div> 
                 })}
             </div>

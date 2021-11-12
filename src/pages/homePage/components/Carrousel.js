@@ -5,13 +5,17 @@ const imgs=[img1,img2];
 const Carrousel = () => {
     const [imgIndex,setImgIndex]=useState(0);
     const [imgSelected,setImgSelected]=useState();
-    
+    const [loadeImg,setLoadImg]=useState();
     useEffect(() => {
-        setImgSelected(imgs[imgIndex]);
-       
+        const interval=setInterval(()=>{
+
+            setImgSelected(imgs[imgIndex]);
+        },300)
+       return ()=>clearInterval(interval)
     }, [imgIndex])
     
     const newImg=(next)=>{
+        setLoadImg(false)
         next
             ?imgIndex<imgs.length-1
                 ?setImgIndex(imgIndex+1)
@@ -24,9 +28,9 @@ const Carrousel = () => {
     }
     
     return (
-        <div className="items-center border-2">
-            <div className="relative flex items-center justify-center ">
-                <img alt="" src={imgSelected}/>
+        <div className="h-4/5">
+            <div className="relative flex items-center justify-center">
+                <img className={`transition duration-400 ${loadeImg?"opacity-100":"opacity-0"} ease-out`} onLoad={()=>setLoadImg(true)} alt="" src={imgSelected}/>
                 <button className="hidden md:block absolute left-5 text-3xl bg-gray-200 rounded-full w-10 h-10 bg-opacity-75 text-center"
                     onClick={()=>newImg()}
                 >
@@ -38,7 +42,7 @@ const Carrousel = () => {
                     {`>`}
                 </button>
                 <div className="absolute bottom-8 flex gap-x-1">{imgs.map((item,i)=>{
-                    return <div className={`w-5 h-5 bg-gray-200 ${imgIndex===i&&"bg-gray-500"} rounded-full cursor-pointer border-4`} key={i} onClick={()=>setImgIndex(i)}></div>   
+                    return <div className={`w-5 h-5 bg-gray-200 ${imgIndex===i&&"bg-gray-500"} rounded-full cursor-pointer border-4`} key={i} onClick={()=>newImg(i)}></div>   
                 })}</div>
             </div>
         </div>

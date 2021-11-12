@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import StatesGlobal from '../../globalStates/GlobalStates'
 
 import img from '../../img/antezana-serv-2.jpg'
 const especialiadad=["Derecho Penal",
@@ -10,9 +11,9 @@ const especialiadad=["Derecho Penal",
         "Procesos Administrativos",
         "Cobranza Judicial y Extrajudicial"
 ]
-const EspecialidadPage = ({namePage,setNamePage}) => {
+const EspecialidadPage = () => {
+    const {namePage,setNamePage}=useContext(StatesGlobal);
     
-
     return (
         <div className=" flex px-10 xl:px-32 gap-x-8 flex-col md:flex-row " >
             <div className="xl:w-1/5 h-4/5 ">

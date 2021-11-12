@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import StatesGlobal from '../../../globalStates/GlobalStates'
 import img from '../../../img/antezana-serv-2.jpg'
 import CardsSection1 from './componentsSection1.js/CardsSection1'
 const especialiadad=["Derecho Penal",
@@ -11,8 +12,8 @@ const especialiadad=["Derecho Penal",
         "Cobranza Judicial y Extrajudicial"
 ]
 
-export const Section1 = ({setNamePage}) => {
-    
+export const Section1 = () => {
+    const {setNamePage}=useContext(StatesGlobal);
     return (
         <div className="w-full mt-10">
             <h1 className="text-center text-4xl mb-10 textColor">Áreas de Especialización </h1>

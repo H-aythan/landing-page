@@ -15,7 +15,7 @@ const NuestrasOficinas = () => {
             <div>
                 <ul className="flex flex-col md:flex-row w-full mb-5">
                     {info.map((item,i)=>{
-                        return<li className={`px-5 py-4 ${i!==selected&&"border-b-2"} flex-grow text-center cursor-pointer 
+                        return<li key={i} className={`px-5 py-4 ${i!==selected&&"border-b-2"} flex-grow text-center cursor-pointer 
                             ${i===selected&&"border-t border-l border-r backgroundColor text-white"}`}
                             onClick={()=>accionesMenu(item,i)}
                             >

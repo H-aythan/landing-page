@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import { useRef, useState} from 'react';
 import {Route,BrowserRouter as Router}from 'react-router-dom'
 import styled from 'styled-components'
 import Foot from './footer/Footer'
@@ -14,25 +14,28 @@ import WsLogo from './componentsFixed/WsLogo';
 import OficinasPage from './pages/oficinasPage/OficinasPage';
 import RedesSociales from './componentsFixed/RedesSociales';
 import AsideForm from './componentsFixed/AsideForm';
-import BtnForm from './componentsFixed/BtnForm';
+
+
 
 function App() {
   const init=useRef()
-  const [namePage,setNamePage]=useState("");
-  const [showForm,setShowForm]=useState(false)
-  const [color,setColor]=useState("red")
+  // eslint-disable-next-line
+  const [color,setColor]=useState("#3730A3")
   
+  // eslint-disable-next-line
   const Container=styled.div`
   & .textColor{
-    color:${color};
+    color:${color?color:"red"};
   }
   & .borderColor{
     border-bottom:1px solid ${color};
   }
   & .backgroundColor{
-    background:${color}
+    background:${color};
   }
-
+  & .borderColorT{
+    border-top:8px solid ${color};
+  }
   & .backgroundColorH{
     &: hover{
       background:${color};
@@ -42,18 +45,18 @@ function App() {
   
   return (
     <Router>
-
-      {showForm&&<AsideForm/>}
-      <Container onClick={()=>setShowForm(false)}>
-        <RedesSociales init={init} setColor={setColor}/>
+      <AsideForm/>
+    
+      <Container >
+        <RedesSociales init={init} />
       
-        <Header setNamePage={setNamePage} init={init} namePage={namePage}/>
+        <Header init={init} />
         
         <Route exact path="/" component={()=>
-          <HomePage setNamePage={setNamePage} init={init}/>
+          <HomePage  init={init}/>
         }/>
         <Route path="/Especialidades" component={()=>
-          <EspecialidadPage namePage={namePage} setNamePage={setNamePage} init={init}/>
+          <EspecialidadPage  init={init}/>
         }/>
         <Route exact path="/Nuestra Firma" component={()=>
           <FirmaPage init={init}/>
@@ -70,13 +73,12 @@ function App() {
           <OficinasPage init={init}/>
         }/>
         
-        
-        <Foot setNamePage={setNamePage}/>  
+        <Foot />  
       </Container>
-      
+    
       <WsLogo/>  
-      {!showForm&&<BtnForm setShowForm={setShowForm}/>} 
-    </Router>
+      
+   </Router>
   );
 }
 

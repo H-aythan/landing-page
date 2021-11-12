@@ -3,7 +3,12 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      transitionDuration: {
+      
+        '2000': '2000ms',
+      }
+    },
     colors: {
       
       transparent: "transparent",
@@ -38,6 +43,7 @@ module.exports = {
     extend: {
       border:["hover"],
       padding:["hover"],
+      margin:["hover"],
     },
   },
   plugins: [],

@@ -1,15 +1,17 @@
-import React, { useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import {NavLink,} from 'react-router-dom';
+import StatesGlobal from '../globalStates/GlobalStates';
 import logo from '../img/Estudio_Juridico_Antezana_logo_2.png'
 import OptionNav from './headerComponents/OptionNav';
 const optionNav=["Inicio","Nuestra Firma","Especialidades","Clientes","Contactenos","Oficinas"];
 
-const Header = ({setNamePage,init,namePage}) => {
+const Header = ({init}) => {
     const [show,setShow]=useState(false);
     const [pageSelected,setPageSelected]=useState("")
-    
+    const {namePage,setNamePage}=useContext(StatesGlobal)
     useEffect(()=>{
         init.current.scrollIntoView({block: "end", behavior: "smooth"})
+        
     },[pageSelected,init,namePage])
     
     return (

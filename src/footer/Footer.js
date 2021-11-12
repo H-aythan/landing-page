@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom';
+import StatesGlobal from '../globalStates/GlobalStates';
 import backImg from '../img/Estudio_Juridico_Antezana_botton.jpg'
 import data from './Data';
 const dataFoot=[1,1,1,1,1,1,1,1,1]
 
-const Footer = ({setNamePage}) => {
+const Footer = () => {
     const {card1,card2,card3}=data;
-    
+    const {setNamePage}=useContext(StatesGlobal);
     return (
         <footer className="mt-16 text-white md:py-20 flex justify-center flex-wrap overflow-x-hidden" style={{backgroundImage:`url(${backImg})`}}>
             <div className="xl:w-4/5 flex flex-wrap md:flex-nowrap flex-col lg:flex-row items-center mb-5 md:gap-x-14">

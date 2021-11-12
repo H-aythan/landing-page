@@ -1,5 +1,5 @@
 import { useRef, useState} from 'react';
-import {Route,BrowserRouter as Router}from 'react-router-dom'
+import {Route,BrowserRouter as Router,Switch}from 'react-router-dom'
 import styled from 'styled-components'
 import Foot from './footer/Footer'
 import Header from './header/Header';
@@ -14,6 +14,7 @@ import WsLogo from './componentsFixed/WsLogo';
 import OficinasPage from './pages/oficinasPage/OficinasPage';
 import RedesSociales from './componentsFixed/RedesSociales';
 import AsideForm from './componentsFixed/AsideForm';
+import PageNotFound from './pages/pageNotFound/PageNotFound';
 
 
 
@@ -45,6 +46,7 @@ function App() {
   
   return (
     <Router>
+      
       <AsideForm/>
     
       <Container >
@@ -52,27 +54,30 @@ function App() {
       
         <Header init={init} />
         
-        <Route exact path="/" component={()=>
-          <HomePage  init={init}/>
-        }/>
-        <Route path="/Especialidades" component={()=>
-          <EspecialidadPage  init={init}/>
-        }/>
-        <Route exact path="/Nuestra Firma" component={()=>
-          <FirmaPage init={init}/>
-        }/>
-        <Route path="/Clientes" component={()=>
-          <ClientesPage init={init}/>
-        }/>
+        <Switch>
+          <Route exact path="/" component={()=>
+            <HomePage  init={init}/>
+          }/>
+          <Route path="/Especialidades" component={()=>
+            <EspecialidadPage  init={init}/>
+          }/>
+          <Route exact path="/Nuestra Firma" component={()=>
+            <FirmaPage init={init}/>
+          }/>
+          <Route exact path="/Clientes" component={()=>
+            <ClientesPage init={init}/>
+          }/>
+          
+          <Route exact path="/Contactenos" component={()=>
+            <ContactPage init={init}/>
+          }/>
         
-        <Route path="/Contactenos" component={()=>
-          <ContactPage init={init}/>
-        }/>
-      
-        <Route path="/Oficinas" component={()=>
-          <OficinasPage init={init}/>
-        }/>
-        
+          <Route exact path="/Oficinas" component={()=>
+            <OficinasPage init={init}/>
+          }/>
+          
+          <Route component={PageNotFound}/>
+        </Switch>
         <Foot />  
       </Container>
     

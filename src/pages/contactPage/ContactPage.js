@@ -1,4 +1,5 @@
 import React from 'react'
+import ImgAnimate from '../../ImgAnimate'
 import Formulario from './componentsContactPage/Formulario'
 import NuestrasOficinas from './componentsContactPage/NuestrasOficinas'
 const lista=[1,1,1]
@@ -24,8 +25,8 @@ const ContactPage = () => {
                 <div className="my-8">
                     <h1 className="text-4xl mb-5">Social</h1>
                     <div className="flex">
-                        <div className="w-10 h-10 border-2"></div>
-                        <div className="w-10 h-10 border-2"></div>
+                        <ImgAnimate/>
+                        <ImgAnimate/>
                     </div>
                 </div>
             </div>

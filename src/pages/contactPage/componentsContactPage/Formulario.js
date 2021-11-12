@@ -1,11 +1,15 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import InputForm from './InputForm'
 import { Formik ,Form, Field} from 'formik';
 
 const Formulario = () => {
     const [datosForm,setDtosForm]=useState("");
     const [envio,setEnvio]=useState(false)
-    console.log(datosForm);
+    
+    useEffect(() => {
+        console.log(datosForm);
+        
+    }, [datosForm])
     return (
         <>
         <Formik

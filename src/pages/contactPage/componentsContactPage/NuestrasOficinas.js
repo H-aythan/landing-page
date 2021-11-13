@@ -10,7 +10,7 @@ const NuestrasOficinas = () => {
         setPosition(location);
     }
     return (
-        <div className="w-4/5 flex flex-col">
+        <div className="w-4/5 flex flex-col mt-5">
             <h1 className="text-center textColor border-b pb-5 text-3xl mb-10">Nuestras Oficinas</h1>
             <div>
                 <ul className="flex flex-col md:flex-row w-full mb-5">

@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="w-4/5 lg:w-1/3">
                     <h5 className="text-xl mb-5">{card2.title}</h5>
                     <ul className="w-full">{card2.especialiadad.map((item,i)=>{
-                        return <li className="border-b text-lg py-1" key={i}>
+                        return <li className="border-b text-lg py-1 hover:underline" key={i}>
                                 <NavLink to="/Especialidades" onClick={()=>setNamePage(item)}>&gt;{item}</NavLink>
                             </li> 
                     })}</ul>

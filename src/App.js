@@ -23,33 +23,12 @@ function App() {
   // eslint-disable-next-line
   const [color,setColor]=useState("#3730A3")
   
-  // eslint-disable-next-line
-  const Container=styled.div`
-  & .textColor{
-    color:${color?color:"red"};
-  }
-  & .borderColor{
-    border-bottom:1px solid ${color};
-  }
-  & .backgroundColor{
-    background:${color};
-  }
-  & .borderColorT{
-    border-top:8px solid ${color};
-  }
-  & .backgroundColorH{
-    &: hover{
-      background:${color};
-    }
-  }
-`
-  
   return (
     <Router>
       
       <AsideForm/>
     
-      <Container >
+      <Container colorPrimary={color}>
         <RedesSociales init={init} />
       
         <Header init={init} />
@@ -86,6 +65,27 @@ function App() {
    </Router>
   );
 }
-
+const Container=styled.div`
+  & .textColor{
+    color:${props=>props.colorPrimary};
+  }
+  & .borderColor{
+    border-bottom:1px solid ${props=>props.colorPrimary};
+  }
+  & .backgroundColor{
+    background:${props=>props.colorPrimary};
+  }
+  & .borderColorT{
+    border-top:8px solid ${props=>props.colorPrimary};
+  }
+  & .borderColorB{
+    border-color:${props=>props.colorPrimary};
+  }
+  & .backgroundColorH{
+    &: hover{
+      background:${props=>props.colorPrimary};
+    }
+  }
+`
 
 export default App;

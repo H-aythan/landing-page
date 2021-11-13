@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import {NavLink} from 'react-router-dom';
 
-
 const especialiadad=["Derecho Penal",
         "Derecho Laboral",
         "Derecho Corporativo",
@@ -11,6 +10,7 @@ const especialiadad=["Derecho Penal",
         "Procesos Administrativos",
         "Cobranza Judicial y Extrajudicial"
 ]
+
 const OptionNav = ({name,setNamePage,setShowMenu,setPageSelected}) => {
     const [show,setShow]=useState(false);
     
@@ -24,20 +24,21 @@ const OptionNav = ({name,setNamePage,setShowMenu,setPageSelected}) => {
         name!=="Especialidades"&&setShowMenu(false)
         name==="Especialidades"&&e.preventDefault()
         name!=="Especialidades"&&setPageSelected(name);
-        setShow(!show);//cierra y abre el menu desplegable   
+        setShow(!show);//cierra y abre el menu desplegable 
+          
     }
     return (
-        <li   className="relative py-2 border-b-2 md:border-0"  
+        <li   className="relative py-2 "  
                onMouseOut={()=>setShow(false)}
             >
             <NavLink exact   
-                className="px-5 py-2 md:py-5 flex items-center cursor-pointer"
-                activeClassName="textColor borderColor"
+                className="px-5 py-2 md:py-5 flex items-center cursor-pointer border-b-2 md:border-0"
+                activeClassName={`textColor ${"borderColor"}`}
                  
                 to={`/${name!=="Inicio"?name:""}`}
                 onClick={(e)=>acciones2(e,name)}
                 
-                >
+            >
                     <div className="flex items-center w-full" >
                         {name}
                         {name==="Especialidades"&&<div className="ml-4 transform rotate-90 text-3xl " >
@@ -53,10 +54,10 @@ const OptionNav = ({name,setNamePage,setShowMenu,setPageSelected}) => {
                 >
                 {especialiadad.map((item,i)=>{
                     return <li key={i} className="backgroundColorH hover:text-white flex" 
-                            onClick={()=>acciones(item)} 
-                            onMouseEnter={()=>setShow(true)}
-                            onMouseOut={()=>setShow(false)}
-                        >
+                                onClick={()=>acciones(item)} 
+                                onMouseEnter={()=>setShow(true)}
+                                onMouseOut={()=>setShow(false)}
+                            >
                             <NavLink to={`/Especialidades`} className="w-full py-2 pl-5">
                                 {item}
                             </NavLink>
